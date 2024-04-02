@@ -42,6 +42,30 @@ public class App {
     }
     //Getter and Setter
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public static int getSumatoria() {
+        return sumatoria;
+    }
+
+    public static void setSumatoria(int sumatoria) {
+        App.sumatoria = sumatoria;
+    }
+
+    public static String[] getPrefijos() {
+        return prefijos;
+    }
+
+    public static void setPrefijos(String[] prefijos) {
+        App.prefijos = prefijos;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -73,6 +97,8 @@ public class App {
     public void setNumeroDescargas(int numeroDescargas) {
         this.numeroDescargas = numeroDescargas;
     }
+
+
    
     //Equals and hashcode
 

@@ -19,7 +19,16 @@ public class Prueba {
         System.out.println(lista);
 //        Guarda los datos de todas las App de la lista, en un fichero de texto 
 //        llamado aplicacionestxt.csv, dentro del directorio “./appscsv”.
-        Escritura.crearDirectorio();
+        Directorios.crearDirectorio("appscsv");
         Escritura.generarFicheroCSV(lista);
+        System.out.println(lista.size());
+        
+//        Crea un directorio, "./appscsv2", donde se guarden en archivos 
+//        individuales CSV, los datos de cada una de las aplicaciones. En este 
+//        directorio deben generarse 50 ficheros con el nombre que tenga la aplicación 
+//        en su atributo.
+
+        Directorios.crearDirectorio("appscsv2");
+        Escritura.generarFicheroPorObjeto(lista);
     }
 }

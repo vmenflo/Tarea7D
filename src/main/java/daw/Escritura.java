@@ -23,26 +23,10 @@ public class Escritura {
 //    Guarda los datos de todas las App de la lista, en un fichero de texto llamado 
 //            aplicacionestxt.csv, dentro del directorio “./appscsv”.
 
-    //Crear directorio
-    public static void crearDirectorio() {
-
-        Path directorio = Paths.get("appscsv");
-
-        try {
-            Files.createDirectories(directorio);
-        } catch (FileAlreadyExistsException faee) {
-            System.out.println("No se puede crear porque ya existe");
-        } catch (AccessDeniedException ade) {
-            System.out.println("No tiene permisos para crear esta ruta");
-        } catch (IOException e) {
-            System.out.println("Problema creando el directorio ");
-            System.out.println("Seguramente la ruta está mal escrita o no existe");
-        }
-    }
     //Método para guardar el archivo en el directorio especificado
     public static void generarFicheroCSV(List<App> lista) {
 
-        // Bucle para crear el archivo
+        // Bucle para crear el archivo por cada linea de la lista
         for (int i = 0; i < lista.size(); i++) {
 
             try {
@@ -53,4 +37,28 @@ public class Escritura {
             }
         }
     }
+    
+//Crea un directorio, "./appscsv2", donde se guarden en archivos individuales CSV,
+//los datos de cada una de las aplicaciones. En este directorio deben generarse 
+//50 ficheros con el nombre que tenga la aplicación en su atributo.
+    
+    public static void generarFicheroPorObjeto(List<App> lista){
+        for (int i = 0; i < lista.size(); i++) {
+            //Cambiando el nombre del archivo creara csv individuales
+            try {
+                Files.write(Paths.get("./appscsv2/"+lista.get(i).getNombre()+".csv"), (lista.get(i) + "\n").getBytes(StandardCharsets.UTF_8),
+                        StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            } catch (IOException ex) {
+                System.out.println("Error creando el fichero");
+            }
+        }
+    }
+    
+//Guarda los datos de todas las App de la lista, en un fichero XML llamado 
+//aplicacionesxml.xml, dentro del directorio “./appsxml”. Ayúdate del ejemplo del 
+//repositorio de clase. Incluye las dependencias necesarias en el pom.xml
+    public static void generarFicheroXML(List<App> lista){
+    
+    }
+    
 }
