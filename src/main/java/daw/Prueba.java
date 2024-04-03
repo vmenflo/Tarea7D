@@ -4,7 +4,9 @@
  */
 package daw;
 
+import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBException;
 
 /**
  *
@@ -12,7 +14,7 @@ import java.util.List;
  */
 public class Prueba {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JAXBException {
 //        Crea 50 aplicaciones usando el constructor por defecto, guárdalas en una 
 //        lista y muéstralas por pantalla. 
         List<App> lista = Metodos.generarLista50();
@@ -30,5 +32,11 @@ public class Prueba {
 
         Directorios.crearDirectorio("appscsv2");
         Escritura.generarFicheroPorObjeto(lista);
+        
+//      Guarda los datos de todas las App de la lista, en un fichero XML llamado 
+//      aplicacionesxml.xml, dentro del directorio “./appsxml”. Ayúdate del ejemplo del 
+//      repositorio de clase. Incluye las dependencias necesarias en el pom.xml
+        
+        EscribirCatalogoAppsXML.generarCatalogoAppCML(lista);
     }
 }

@@ -11,6 +11,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+
 /**
  *
  * @author Víctor
@@ -24,17 +29,20 @@ public class CatalogoApp {
 
     // XmlElement establece el nombre de los elementos
     // Cada elemento de la lista llevará esta etiqueta en el fichero xml
-    @XmlElement(name = "App")
-    private ArrayList<App> listaMueble;
+    @XmlElement(name = "app")
+    private ArrayList<App> listaApp;
 
     private String descripcion;
 
-    public ArrayList<App> getListaMuebles() {
-        return listaMueble;
+    public CatalogoApp() {
+    }
+
+    public ArrayList<App> getListaApp() {
+        return listaApp;
     }
 
     public void setLista(ArrayList<App> lista) {
-        this.listaMueble = lista;
+        this.listaApp = lista;
     }
 
     public String getDescripcion() {
