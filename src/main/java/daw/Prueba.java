@@ -35,7 +35,7 @@ public class Prueba {
 //      Guarda los datos de todas las App de la lista, en un fichero XML llamado 
 //      aplicacionesxml.xml, dentro del directorio “./appsxml”. Ayúdate del ejemplo del 
 //      repositorio de clase. Incluye las dependencias necesarias en el pom.xml
-        
+        Directorios.crearDirectorio("appsxml");
         EscribirCatalogoAppsXML.generarCatalogoAppCML(lista);
     }
 }

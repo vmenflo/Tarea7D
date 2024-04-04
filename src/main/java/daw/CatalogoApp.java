@@ -24,7 +24,7 @@ import javax.xml.bind.Marshaller;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CatalogoApp {
         // XmLElementWrapper define un contenedor para la lista 
-    // de muebles
+    // de apps
     @XmlElementWrapper(name = "catalogo")
 
     // XmlElement establece el nombre de los elementos

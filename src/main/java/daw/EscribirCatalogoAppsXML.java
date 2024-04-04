@@ -48,6 +48,6 @@ public class EscribirCatalogoAppsXML {
         serializador.marshal(catalogo, System.out);
 
         // Volcado al fichero xml
-        serializador.marshal(catalogo, new File("catalogo.xml"));
+        serializador.marshal(catalogo, new File("./appsxml/catalogo.xml"));
     }
 }
