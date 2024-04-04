@@ -4,6 +4,7 @@
  */
 package daw;
 
+import java.io.IOException;
 import java.util.List;
 import javax.xml.bind.JAXBException;
 
@@ -13,7 +14,7 @@ import javax.xml.bind.JAXBException;
  */
 public class Prueba {
 
-    public static void main(String[] args) throws JAXBException {
+    public static void main(String[] args) throws JAXBException, IOException {
 //        Crea 50 aplicaciones usando el constructor por defecto, guárdalas en una 
 //        lista y muéstralas por pantalla. 
         List<App> lista = Metodos.generarLista50();
@@ -37,5 +38,13 @@ public class Prueba {
 //      repositorio de clase. Incluye las dependencias necesarias en el pom.xml
         Directorios.crearDirectorio("appsxml");
         EscribirCatalogoAppsXML.generarCatalogoAppCML(lista);
+        
+//      Guarda los datos de todas las App de la lista, en un fichero JSON 
+//      llamado aplicacionesxml.json, dentro del directorio “./appsjson”. 
+//      Ayúdate del ejemplo del repositorio de clase. Incluye las dependencias 
+//      necesarias en el pom.xml.
+        Directorios.crearDirectorio("appsjson");
+        EscrituraJSON.generarJSON(lista);
+    
     }
 }
