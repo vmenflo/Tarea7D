@@ -54,11 +54,16 @@ public class Escritura {
         }
     }
     
-//Guarda los datos de todas las App de la lista, en un fichero XML llamado 
-//aplicacionesxml.xml, dentro del directorio “./appsxml”. Ayúdate del ejemplo del 
-//repositorio de clase. Incluye las dependencias necesarias en el pom.xml
-    public static void generarFicheroXML(List<App> lista){
-    
+ public static void generarFicheroTXTPorObjeto(List<App> lista){
+        for (int i = 0; i < lista.size(); i++) {
+            //Cambiando el nombre del archivo creara csv individuales
+            try {
+                Files.write(Paths.get("./aplicaciones/"+lista.get(i).getNombre()+".txt"), (lista.get(i) + "\n").getBytes(StandardCharsets.UTF_8),
+                        StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            } catch (IOException ex) {
+                System.out.println("Error creando el fichero");
+            }
+        }
     }
     
 }
